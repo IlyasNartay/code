@@ -1,7 +1,17 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"sort"
+)
 
 func main() {
-	fmt.Println("Hello, L")
+	a := [7]int{6, 3, 5, 6, 3, 5, 7}
+	b := a[2:7]
+	SortSlice(b)
+	fmt.Print(b)
+}
+
+func SortSlice(slice []int) {
+	sort.Slice(slice)
 }
