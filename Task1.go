@@ -8,10 +8,42 @@ import (
 func main() {
 	a := [7]int{6, 3, 5, 6, 3, 5, 7}
 	b := a[2:7]
-	SortSlice(&b)
-	fmt.Print(b)
+	fmt.Println("Our slice:", b)
+	SortSlice(b)
+	fmt.Println("Sorted Slice:", b)
+	IncrementOdd(b)
+	fmt.Println("Increased in odd position Slice:", b)
+	PrintSlice(b)
+	RevereSlice(b)
+	fmt.Print("Reversed Slice: ", b)
 }
 
-func SortSlice(slice *[]int) {
-	sort.Slice(*slice, func(i, j int) bool { return i < j })
+func SortSlice(slice []int) {
+	sort.Ints(slice)
+}
+
+func IncrementOdd(slice []int) {
+	for i := 0; i < len(slice); i++ {
+		if (i+1)%2 == 1 {
+			slice[i]++
+		}
+	}
+}
+func PrintSlice(slice []int) {
+	fmt.Print("We can print by func: {")
+	for _, element := range slice {
+		fmt.Printf("%d ", element)
+	}
+	fmt.Println("}")
+}
+func RevereSlice(slice []int) {
+	i := 0
+	j := len(slice) - 1
+	for i < j {
+		temp := slice[i]
+		slice[i] = slice[j]
+		slice[j] = temp
+		i++
+		j--
+	}
 }
