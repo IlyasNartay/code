@@ -1,5 +1,7 @@
 package main
 
+// 220107151
+// Iliyas Nartay
 import (
 	"fmt"
 	"sort"
@@ -23,10 +25,8 @@ func SortSlice(slice []int) {
 }
 
 func IncrementOdd(slice []int) {
-	for i := 0; i < len(slice); i++ {
-		if (i+1)%2 == 1 {
-			slice[i]++
-		}
+	for i := 1; i < len(slice); i += 2 {
+		slice[i]++
 	}
 }
 func PrintSlice(slice []int) {
