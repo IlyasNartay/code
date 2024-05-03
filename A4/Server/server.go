@@ -11,7 +11,6 @@ import (
 	"google.golang.org/grpc/codes"
 )
 
-// server implements the UserServiceServer interface
 type server struct {
 	users []*pb.User
 }
@@ -46,3 +45,5 @@ func main() {
 		log.Fatalf("failed to serve: %v", err)
 	}
 }
+
+// protoc --go_out=. --go-grpc_out=. user.proto
