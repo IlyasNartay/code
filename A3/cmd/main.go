@@ -35,7 +35,7 @@ func initRedisClient() *redis.Client {
 
 	rdb := redis.NewClient(&redis.Options{
 		Addr:     "localhost:5432",
-		Password: "",
+		Password: "9999",
 		DB:       0,
 	})
 
