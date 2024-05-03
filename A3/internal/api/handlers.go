@@ -10,7 +10,6 @@ import (
 	"github.com/jmoiron/sqlx"
 )
 
-// Handler struct holds references to Redis client and PostgreSQL database
 type Handler struct {
 	RedisClient *redis.Client
 	DB          *sqlx.DB
